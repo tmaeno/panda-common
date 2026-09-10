@@ -32,9 +32,10 @@ repos:
 # the same reason -- this mirror defaults to passing --ignore-missing-imports and
 # --scripts-are-modules, and the settings belong in pyproject.
 #
-# mypy and the stubs are pinned together: the stubs are part of what the run sees, so
-# an unpinned upgrade would produce findings without a code change. When upgrading
-# either, fix what the new version reports in the same PR.
+# mypy and the stubs are both pinned: the stubs are part of what the run sees, so an
+# unpinned upgrade would produce findings without a code change. dependabot moves the two
+# independently, one PR each, and either can report findings on its own -- resolve what
+# the new version reports in the PR that brings it in.
 -   repo: https://github.com/pre-commit/mirrors-mypy
     rev: v2.3.1
     hooks:
